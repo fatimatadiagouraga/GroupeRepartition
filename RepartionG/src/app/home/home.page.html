@@ -1,0 +1,62 @@
+
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="warning"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-button slot="start">
+  <ion-menu-button menu="main-menu">
+
+  </ion-menu-button>
+</ion-button>
+
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        <ion-button color="warning" routerLink="/creer-groupe">Créer un groupe</ion-button>
+        <ion-button routerLink="/formulaire-g"><ion-icon name="person-add"></ion-icon> </ion-button>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      La liste des apprenants
+    </ion-card-header>
+    <ion-list>
+      Saoudatou Diarra <ion-button >
+        <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/modifier-a">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      Saoudatou Diarra <ion-button>
+        <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button  routerLink="/modifier-a">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      Saoudatou Diarra <ion-button>
+        <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button  routerLink="/modifier-a">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      Saoudatou Diarra <ion-button>
+        <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button  routerLink="/modifier-a">
+        <ion-icon name="create" ></ion-icon>
+      </ion-button>
+      Saoudatou Diarra <ion-button >
+        <ion-icon name="close"></ion-icon>
+        </ion-button>
+        <ion-button  routerLink="/modifier-a">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
