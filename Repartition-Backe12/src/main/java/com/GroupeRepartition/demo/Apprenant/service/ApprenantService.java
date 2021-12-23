@@ -12,5 +12,5 @@ public interface ApprenantService {
     public Apprenant modifierApprenant(Apprenant apprenant,Long idApp);
     public List<Apprenant> listerApprenant();
     public String supprimerApprenant(Long idApp);
-
+    public Apprenant getApprenantsById(Long idAPP);
 }

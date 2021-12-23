@@ -19,7 +19,7 @@ public class GroupeController {
         return "success";
     }
 
-    @PutMapping("modifierGroupe/{idGr}")
+    @PostMapping("modifierGroupe")
     public Groupe modifierGroupe(@RequestBody Groupe groupe,@PathVariable Long idGr){
         return serviceGroupe.modifierGroupe(groupe,idGr);
     }
@@ -27,5 +27,9 @@ public class GroupeController {
     @GetMapping("listerGroupe")
     public List<Groupe> listeGroupe(){
         return serviceGroupe.listeGroupe();
+    }
+    @GetMapping("/genGroupe/{nbreGroupe}")
+    public List<Groupe> genereGroupe(@PathVariable("nbreGroupe") Integer nombreGroupe) {
+        return serviceGroupe.generateByNbreGroupe(nombreGroupe);
     }
 }

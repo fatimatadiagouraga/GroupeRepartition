@@ -9,16 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
 public class ApprenantServiceImp implements ApprenantService {
     @Autowired
     ApprenantRepository apprenantRepository;
+
+
     @Override
     public String ajoutApprenant(Apprenant apprenant) {
+        Optional<Apprenant> findByEmail = apprenantRepository.findByEmail(apprenant.getEmail());
+        Optional<Apprenant> findByTel = apprenantRepository.findByTel(apprenant.getTel());
+        if (findByEmail.isPresent()) {
+            return "email";
+        }
+        if (findByTel.isPresent()) {
+            return "tel";
+        }
         apprenantRepository.save(apprenant);
-        return"Succes Adding";
+                return "Ajouter avec success";
     }
 
     @Override
@@ -35,7 +46,10 @@ public class ApprenantServiceImp implements ApprenantService {
     public List<Apprenant> listerApprenant() {
         return apprenantRepository.findAll();
     }
-
+        @Override
+        public Apprenant getApprenantsById(Long idApp) {
+            return apprenantRepository.findById(idApp).get();
+        }
     @Override
     public String supprimerApprenant(Long idApp) {
         Apprenant apprenant = apprenantRepository.findById(idApp).get();

@@ -1,20 +1,38 @@
 package com.GroupeRepartition.demo.Apprenant;
 
+import com.GroupeRepartition.demo.Groupe.Groupe;
 import com.GroupeRepartition.demo.Repartition.Repartition;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Apprenant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idApp;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "apprenant")
+    private List<Groupe> groupes;
 
     @Column(nullable = false)
     private String nom;
 
     @Column(nullable = false)
     private String prenom;
+
+    public List<Groupe> getGroupes() {
+        return groupes;
+    }
+
+    public void setGroupes(List<Groupe> groupes) {
+        this.groupes = groupes;
+    }
+
+    public Etat getEtat() {
+        return etat;
+    }
 
     @Column(nullable = false)
     private String email;

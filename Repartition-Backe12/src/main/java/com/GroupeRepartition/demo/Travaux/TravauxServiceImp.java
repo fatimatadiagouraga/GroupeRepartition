@@ -3,7 +3,6 @@ package com.GroupeRepartition.demo.Travaux;
 import com.GroupeRepartition.demo.Apprenant.Apprenant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class TravauxServiceImp implements TravauxService{
     TravauxRepository travauxRepository;
 
     @Override
-    public String ajouterTravaux(@RequestBody Travaux travaux) {
+    public String ajouterTravaux(Travaux travaux) {
        travauxRepository.save(travaux);
         return "ajout effectuée avec succes";
     }

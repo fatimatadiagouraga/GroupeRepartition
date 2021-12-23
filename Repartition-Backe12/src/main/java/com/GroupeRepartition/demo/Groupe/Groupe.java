@@ -1,9 +1,12 @@
 package com.GroupeRepartition.demo.Groupe;
 
+import com.GroupeRepartition.demo.Apprenant.Apprenant;
 import com.GroupeRepartition.demo.Repartition.Repartition;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 public class Groupe {
     @Id
@@ -13,7 +16,8 @@ public class Groupe {
     private String nom;
 
     private LocalDate datecreation=LocalDate.now();
-
+    @ManyToMany
+    private List<Apprenant> apprenant;
 
     public Groupe() {
     }
@@ -45,6 +49,9 @@ public class Groupe {
 
     public void setDatecreation(LocalDate datecreation) {
         this.datecreation = datecreation;
+    }
+
+    public void setApprenant(List<Apprenant> apprenants) {
     }
 
 }

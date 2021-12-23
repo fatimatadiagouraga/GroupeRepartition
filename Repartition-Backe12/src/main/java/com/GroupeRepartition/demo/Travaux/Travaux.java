@@ -14,7 +14,8 @@ public class Travaux {
     private String titre;
 
     @Column(nullable = false)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private Type type;
 
     private LocalDate datedebut=LocalDate.now();
 
@@ -23,7 +24,7 @@ public class Travaux {
     public Travaux() {
     }
 
-    public Travaux(String titre, String type, LocalDate datedebut, Date datefin) {
+    public Travaux(String titre, Type type, LocalDate datedebut, Date datefin) {
         this.titre = titre;
         this.type = type;
         this.datedebut = datedebut;
@@ -46,11 +47,11 @@ public class Travaux {
         this.titre = titre;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 

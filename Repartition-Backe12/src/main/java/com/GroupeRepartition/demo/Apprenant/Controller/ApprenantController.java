@@ -15,6 +15,7 @@ import java.util.List;
 public class ApprenantController {
     @Autowired
     ApprenantService apprenantService;
+    private ApprenantService ApprenantServiceImp;
 
     @PostMapping("ajoutapprenant")
     public String ajouterApprenant(@RequestBody Apprenant apprenant){
@@ -29,6 +30,10 @@ public class ApprenantController {
     @PutMapping("modifierapprenant/{idApp}")
     public Apprenant modifierapprenant(@RequestBody Apprenant apprenant,@PathVariable Long idApp){
         return  apprenantService.modifierApprenant(apprenant,idApp);
+    }
+    @GetMapping("/InfoApp/{id}")
+    public Apprenant getApprenantById(@PathVariable Long id){
+        return this.ApprenantServiceImp.getApprenantsById(id);
     }
 
     @DeleteMapping("supprimerapprenant/{idApp}")
