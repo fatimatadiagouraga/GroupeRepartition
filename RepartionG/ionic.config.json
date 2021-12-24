@@ -1,7 +1,0 @@
-{
-  "name": "RepartionG",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
